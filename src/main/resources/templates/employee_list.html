@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee list</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+table, th, td {
+	border: 1px double black;
+	border-collapse: collapse;
+	background-color: threedhighlight;
+}
+.button{
+	border:none;
+	color:white;
+	padding:10px 25px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+	margin:4px 2px;
+	cursor:pointer;
+}
+.button1 {background-color:#4CAF50;}
+.button2 {background-color:#CD5C5C;}
+.button3 {background-color:#0000CD;}
+.button4 {background-color:#C0C0C0;}
+
+</style>
+</head>
+<body th:style=" ' background:url(/img/img3.jpeg) no-repeat center center fixed; background-repeat: no-repeat; background-size: 100% 100%; height: 500px; background-attachment: fixed '">
+	<div align="center" class="container text-center">
+	<h1 align="center">
+        <font color="Blue",font style="monospace" size ="20" >EMPLOYEE MANAGEMENT SYSTEM</font> 
+    </h1>
+    <hr>
+   
+		<h2 align="center">Employee List</h2>
+		<p align="left">
+			<a th:href="@{/welcome}">
+		<button class="button button4">Back</button></a>
+		</p>
+		
+			<br><br>
+			<fieldset style="width:900px">
+			<p align="left">
+			<a th:href="@{/showForm}">
+		<button class="button button3">Add Employee</button></a>
+		</p>
+			<table  align="center" class="table table-striped table-bordered">
+				<thead class="thread-dark">
+				<tr>
+					<th>Employee ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Role</th>
+					<th>Designation</th>
+					<th>Department</th>
+					<th>Salary</th>
+					<th>Contact</th>
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr th:each="emp : ${listEmployees}">
+					<td th:text="${emp.id}"></td>
+					<td th:text="${emp.first_name}"></td>
+					<td th:text="${emp.last_name}"></td>
+					<td th:text="${emp.role}"></td>
+					<td th:text="${emp.designation}"></td>
+					<td th:text="${emp.department}"></td>
+					<td th:text="${emp.salary}"></td>
+					<td th:text="${emp.contact}"></td>
+					<td> <a th:href="@{/updateForm (id=${emp.id})}" >
+					<button class="button button1">Update</button></a>
+						 <a th:href="@{/delete (id=${emp.id})}" onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
+						 <button class="button button2">Delete</button></a>
+					</td>
+				</tr>
+				</tbody>
+				
+			
+			</table>
+			</fieldset>
+			
+</div>
+</body>
+</html>

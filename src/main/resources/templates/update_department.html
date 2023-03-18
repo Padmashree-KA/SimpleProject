@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+</head>
+<style>
+	.button{
+	border:none;
+	color:white;
+	padding:10px 25px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+	margin:4px 2px;
+	cursor:pointer;
+}
+.button1 {background-color:#4CAF50;}
+.button2 {background-color:#CD5C5C;}
+</style>
+</head>
+<body th:style=" ' background:url(/img/img5.jpg) no-repeat center center fixed; background-repeat: no-repeat; background-size: 100% 100%; height: 500px; background-attachment: fixed '">
+
+
+	
+		<h1 align="center">
+        <font color="Blue" size ="15" >EMPLOYEE MANAGEMENT SYSTEM</font> 
+    </h1>
+		<hr>
+		<br>
+		<br>
+	
+		<div align="center">
+		<form action="#" th:action="@{/saveDepartment}" th:object="${department}" method ="post">
+			
+			<input type="hidden" th:field="*{id}"/>
+			<fieldset style="width:270px">
+			<legend>Update Department Details</legend>
+			<br>
+			
+		    <div class="form-group">
+							<label for="dname" class="col-md-3 control-label">Department Name</label>
+								
+			</div>
+			<input type="text" th:field="*{dname}"  placeholder="Department Name" required id="DepartmentName" class="form-control mb-4 col4">
+			<br>
+			<br>
+			 <div class="form-group">
+							<label for="dphoneNo" class="col-md-3 control-label">Phone No</label>
+								
+			</div>
+			<input type="text" th:field="*{dphoneNo}"  placeholder="Phone No" required id="PhoneNo" class="form-control mb-4 col4">
+			<br><br>
+			 <div class="form-group">
+							<label for="dEmail" class="col-md-3 control-label">Department Email</label>
+			</div>
+			<input type="text" th:field="*{dEmail}"  placeholder="Email" required id="Email" class="form-control mb-4 col4">
+			<br><br>
+			
+			 <div class="form-group">
+							<label for="dEntentionNo" class="col-md-3 control-label">Entention No</label>
+			</div>
+			<input type="text" th:field="*{dEntentionNo}"  placeholder="Department's Entention No" required id="Entention No" class="form-control mb-4 col4">
+			<br><br>
+			 
+			<div class="form-group">
+				<div class="col-md-offset-3 col-md-9">
+						<button class="button button1">Update</button>
+						<a th:href="@{/dept-list}"></a>
+						
+						<button class="button button2">Cancel</button>
+						<a th:href="@{/dept-list}"></a>
+						
+							</div>
+						</div>
+			
+			</fieldset>	
+		</form>
+		</div>
+		</div>
+
+</body>
+</html>

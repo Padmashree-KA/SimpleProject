@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Form</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+table, th, td {
+	border: 1px double black;
+	border-collapse: collapse;
+	background-color: threedhighlight;
+}
+.button{
+	border:none;
+	color:white;
+	padding:10px 25px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+	margin:4px 2px;
+	cursor:pointer;
+}
+.button1 {background-color:#4CAF50;}
+.button2 {background-color:#CD5C5C;}
+.button3 {background-color:#0000CD;}
+
+</style>
+</head>
+<body th:style=" ' background:url(/img/img3.jpeg) no-repeat center center fixed; background-repeat: no-repeat; background-size: 100% 100%; height: 500px; background-attachment: fixed '">
+	<div align="center" class="container text-center">
+	<h1 align="center">
+        <font color="Blue",font style="monospace" size ="20" >EMPLOYEE MANAGEMENT SYSTEM</font> 
+    </h1>
+    <hr>
+   
+		
+		
+			<br><br>
+			<div align="center">
+			
+			
+		<form th:action="@{/login}" th:object="${admin}"method ="post">
+		
+			
+			<fieldset style="width:270px">
+			<legend>Login Here</legend>
+			<br>
+			
+				<div class="form-group">
+				<label for="username" class="col-md-3 control-label">User Name</label>
+								
+			</div>
+			<input type="text" th:field="*{username}"  placeholder="UserName" required id="UserName" class="form-control mb-4 col4">
+			<br>
+			<br>
+			<div class="form-group">
+				<label for="password" class="col-md-3 control-label">Password</label>
+								
+			</div>
+			<input type="text" th:field="*{password}"  placeholder="Password" required id="Password" class="form-control mb-4 col4">
+			<br>
+			<br>
+				
+				
+				<p align="center">
+			<a th:href="@{/welcome}">
+		<button class="button button3">Login</button></a>
+		</p>
+				</tbody>
+			
+			</fieldset>
+			</form>
+			</div>
+</body>
+</html>

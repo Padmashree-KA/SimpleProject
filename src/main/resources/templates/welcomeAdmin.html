@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Admin</title>
+<style>
+
+.button{
+	border:none;
+	color:white;
+	padding:10px 25px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+	margin:4px 2px;
+	cursor:pointer;
+}
+.button1 {background-color:#4CAF50;}
+
+}
+</style>
+</head>
+<body th:style=" ' background:url(/img/img6.jpeg) no-repeat center center fixed; background-repeat: no-repeat; background-size: 100% 100%; height: 500px; background-attachment: fixed '">
+	<div align="center" class="container text-center">
+	<h1 align="center">
+        <font color="Blue",font style="monospace" size ="20" >EMPLOYEE MANAGEMENT SYSTEM</font> 
+    </h1>
+    <hr style="width:100%;text-align:right;">
+    </div>
+    <br>
+    <br>
+    <h1 align="center">Welcome Admin</h1>
+	
+	<p align="left">
+			<a th:href="@{/list}">
+		<button class="button button1">View Employee List</button></a>
+		</p>
+		<br><br>
+		
+		<p align="left">
+			<a th:href="@{/deptList}">
+		<button class="button button1">View Department List</button></a>
+		</p>
+		
+		<br><br>
+		<p align="left">
+			<a th:href="@{/employee}">
+		<button class="button button1">Find Employee By ID</button></a>
+		</p>
+		<div class="vl">
+		
+		</div>
+		
+		
+	
+</body>
+</html>
